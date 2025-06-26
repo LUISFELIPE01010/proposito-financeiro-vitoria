@@ -125,4 +125,21 @@
   .bg-brand-gold {
     background-color: #907A51;
   }
+
+  .animate-bounce-subtle {
+    animation: bounce-subtle 2s infinite;
+  }
+
+  @keyframes bounce-subtle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .shadow-3xl {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+  }
 }

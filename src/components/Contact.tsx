@@ -16,9 +16,15 @@ export const Contact = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50 px-4 md:px-8">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-brand-black mb-8 animate-fade-in">
+    <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 px-4 md:px-8 relative">
+      {/* Background effects */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-20 w-28 h-28 bg-brand-gold rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-16 w-20 h-20 bg-brand-brown rounded-full blur-2xl animate-pulse delay-1000"></div>
+      </div>
+      
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        <h2 className="text-3xl md:text-4xl font-heading font-bold text-brand-brown mb-8 animate-fade-in">
           Precisa falar comigo?
         </h2>
         
@@ -29,7 +35,7 @@ export const Contact = () => {
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
           <Button 
             onClick={handleWhatsApp}
-            className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full flex items-center gap-3 text-lg font-semibold transition-all duration-300 transform hover:scale-105"
+            className="bg-gradient-to-r from-brand-brown to-brand-brown/90 hover:from-brand-brown/90 hover:to-brand-brown text-white px-8 py-4 rounded-full flex items-center gap-3 text-lg font-semibold transition-all duration-500 transform hover:scale-105 shadow-xl hover:shadow-brand-brown/50"
           >
             <MessageCircle className="w-6 h-6" />
             WhatsApp
@@ -37,15 +43,15 @@ export const Contact = () => {
           
           <Button 
             onClick={handleInstagram}
-            className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-4 rounded-full flex items-center gap-3 text-lg font-semibold transition-all duration-300 transform hover:scale-105"
+            className="bg-gradient-to-r from-brand-brown to-brand-brown/90 hover:from-brand-brown/90 hover:to-brand-brown text-white px-8 py-4 rounded-full flex items-center gap-3 text-lg font-semibold transition-all duration-500 transform hover:scale-105 shadow-xl hover:shadow-brand-brown/50"
           >
             <Instagram className="w-6 h-6" />
             Instagram
           </Button>
         </div>
         
-        <div className="bg-white rounded-2xl p-8 shadow-lg animate-slide-up">
-          <h3 className="text-2xl md:text-3xl font-heading font-bold text-brand-black mb-4">
+        <div className="bg-gradient-to-r from-white via-gray-50 to-white rounded-3xl p-8 shadow-2xl animate-slide-up border border-brand-gold/20 hover:shadow-3xl transition-shadow duration-500">
+          <h3 className="text-2xl md:text-3xl font-heading font-bold text-brand-brown mb-4">
             Não deixe para amanhã o que pode mudar sua vida hoje
           </h3>
           
@@ -55,7 +61,7 @@ export const Contact = () => {
           
           <Button 
             onClick={handleFinalCTA}
-            className="bg-brand-gold hover:bg-brand-gold/90 text-white px-12 py-6 text-xl font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="bg-gradient-to-r from-brand-gold to-yellow-500 hover:from-yellow-500 hover:to-brand-gold text-brand-brown px-12 py-6 text-xl font-bold rounded-full transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-brand-gold/50 animate-bounce-subtle"
           >
             Sim, quero organizar minha vida financeira agora
           </Button>

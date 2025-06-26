@@ -1,122 +1,92 @@
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+
+const testimonials = [
+  {
+    name: "Ana Carolina",
+    text: "Sempre achei que precisava ganhar mais. Mas o curso me mostrou que organização vem antes. Hoje tenho paz com meu dinheiro.",
+    image: "/lovable-uploads/54787f38-a257-45c4-92a9-947cb4b3447f.png"
+  },
+  {
+    name: "Mariana Silva",
+    text: "A planilha mudou minha vida! Agora sei exatamente para onde vai cada centavo e consigo guardar dinheiro.",
+    image: "/lovable-uploads/85f7b0e0-b7da-4b26-8d12-320cb84fa5b2.png"
+  },
+  {
+    name: "Juliana Santos",
+    text: "Método prático e direto. Em 30 dias já estava vendo resultados. Recomendo para todas as mulheres!",
+    image: "/lovable-uploads/54787f38-a257-45c4-92a9-947cb4b3447f.png"
+  }
+];
 
 export const Testimonials = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const testimonials = [
-    {
-      name: "Juliana Andrade",
-      text: "Sempre achei que precisava ganhar mais. Mas o curso me mostrou que organização vem antes. Hoje tenho paz com meu dinheiro.",
-      avatar: "/lovable-uploads/85f7b0e0-b7da-4b26-8d12-320cb84fa5b2.png"
-    },
-    {
-      name: "Marina Santos",
-      text: "Consegui quitar minhas dívidas em 6 meses seguindo o método. A planilha é um divisor de águas!",
-      avatar: "/lovable-uploads/54787f38-a257-45c4-92a9-947cb4b3447f.png"
-    },
-    {
-      name: "Fernanda Lima",
-      text: "Finalmente entendi para onde meu dinheiro ia. Agora tenho uma reserva de emergência pela primeira vez na vida.",
-      avatar: "/lovable-uploads/787e3892-03db-45f4-9e82-10dc88294e87.png"
-    }
-  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    }, 4000);
 
     return () => clearInterval(timer);
-  }, [testimonials.length]);
+  }, []);
 
   const handleCTAClick = () => {
     window.open('https://pay.kiwify.com.br/pJETYxg', '_blank');
   };
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
   return (
-    <section className="py-20 bg-brand-black text-white px-4 md:px-8">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12 animate-fade-in">
-          Resultados reais de quem colocou o método 
-          <span className="text-brand-gold"> em prática</span>
+    <section className="py-20 bg-gradient-to-br from-brand-brown via-brand-brown/95 to-brand-brown/90 px-4 md:px-8 relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-16 left-16 w-32 h-32 bg-brand-gold rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-24 h-24 bg-yellow-300 rounded-full blur-2xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-white rounded-full blur-xl animate-pulse delay-500"></div>
+      </div>
+      
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-16 animate-fade-in">
+          Resultados reais de quem colocou o método em prática
         </h2>
         
-        <div className="relative">
-          <div className="overflow-hidden">
-            <div 
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {testimonials.map((testimonial, index) => (
-                <div key={index} className="w-full flex-shrink-0 px-4">
-                  <div className="bg-brand-brown/20 rounded-2xl p-8 text-center">
-                    <div className="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden">
-                      <img 
-                        src={testimonial.avatar} 
-                        alt={testimonial.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    
-                    <blockquote className="text-xl md:text-2xl italic mb-6 text-gray-300 leading-relaxed">
-                      "{testimonial.text}"
-                    </blockquote>
-                    
-                    <cite className="text-brand-gold font-semibold text-lg">
-                      — {testimonial.name}
-                    </cite>
-                  </div>
-                </div>
-              ))}
-            </div>
+        <div className="relative bg-gradient-to-r from-white/95 to-gray-50/95 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-brand-gold/30 animate-slide-up">
+          <div className="flex flex-col items-center space-y-6">
+            <img 
+              src={testimonials[currentIndex].image}
+              alt={testimonials[currentIndex].name}
+              className="w-20 h-20 rounded-full object-cover shadow-xl border-4 border-brand-gold animate-pulse"
+            />
+            
+            <blockquote className="text-lg md:text-xl text-gray-700 italic leading-relaxed max-w-2xl">
+              "{testimonials[currentIndex].text}"
+            </blockquote>
+            
+            <p className="font-semibold text-brand-brown text-lg">
+              — {testimonials[currentIndex].name}
+            </p>
           </div>
           
-          <button 
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-brand-gold/20 hover:bg-brand-gold/40 p-3 rounded-full transition-all duration-300"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          
-          <button 
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-brand-gold/20 hover:bg-brand-gold/40 p-3 rounded-full transition-all duration-300"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
+          <div className="flex justify-center space-x-2 mt-8">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex 
+                    ? 'bg-brand-gold scale-125' 
+                    : 'bg-gray-300 hover:bg-brand-gold/50'
+                }`}
+              />
+            ))}
+          </div>
         </div>
         
-        <div className="flex justify-center space-x-2 mt-8">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide ? 'bg-brand-gold' : 'bg-gray-600'
-              }`}
-            />
-          ))}
-        </div>
-        
-        <div className="text-center mt-12">
-          <Button 
+        <div className="mt-12">
+          <button 
             onClick={handleCTAClick}
-            className="bg-brand-gold hover:bg-brand-gold/90 text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="bg-gradient-to-r from-brand-gold to-yellow-500 hover:from-yellow-500 hover:to-brand-gold text-brand-brown px-10 py-4 text-lg font-bold rounded-full transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-brand-gold/50 animate-bounce-subtle"
           >
             Quero ter esses resultados também
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+          </button>
         </div>
       </div>
     </section>
