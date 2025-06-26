@@ -83,7 +83,7 @@ export const Testimonials = () => {
         <div className="mt-12">
           <button 
             onClick={handleCTAClick}
-            className="bg-gradient-to-r from-brand-gold to-yellow-500 hover:from-yellow-500 hover:to-brand-gold text-brand-brown px-10 py-4 text-lg font-bold rounded-full transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-brand-gold/50 animate-bounce-subtle"
+            className="bg-brand-brown hover:bg-brand-brown/90 text-white px-10 py-4 text-lg font-bold rounded-full transition-all duration-300 shadow-2xl"
           >
             Quero ter esses resultados também
           </button>

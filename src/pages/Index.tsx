@@ -12,14 +12,16 @@ import { FixedCTA } from "@/components/FixedCTA";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Hero />
-      <CountdownTimer />
-      <VideoSection />
-      <About />
-      <CourseContent />
-      <Quiz />
-      <Testimonials />
-      <Contact />
+      <div className="space-y-8">
+        <Hero />
+        <CountdownTimer />
+        <VideoSection />
+        <About />
+        <CourseContent />
+        <Quiz />
+        <Testimonials />
+        <Contact />
+      </div>
       <FixedCTA />
     </div>
   );

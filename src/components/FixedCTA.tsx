@@ -5,6 +5,7 @@ import { X } from "lucide-react";
 
 export const FixedCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isPermanentlyClosed, setIsPermanentlyClosed] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,21 +13,26 @@ export const FixedCTA = () => {
       const windowHeight = window.innerHeight;
       
       // Show the fixed CTA after scrolling past the hero section
-      setIsVisible(scrollPosition > windowHeight * 0.8);
+      setIsVisible(scrollPosition > windowHeight * 0.8 && !isPermanentlyClosed);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isPermanentlyClosed]);
 
   const handleCTAClick = () => {
     window.open('https://pay.kiwify.com.br/pJETYxg', '_blank');
   };
 
+  const handleClose = () => {
+    setIsPermanentlyClosed(true);
+    setIsVisible(false);
+  };
+
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white shadow-2xl border-t border-gray-200 p-4 z-50 animate-slide-up">
+    <div className="fixed bottom-0 left-0 right-0 bg-white shadow-2xl border-t border-gray-200 p-6 z-50 animate-slide-up">
       <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="text-center sm:text-left">
           <h3 className="font-heading font-bold text-brand-brown text-lg">
@@ -46,7 +52,7 @@ export const FixedCTA = () => {
           </Button>
           
           <button 
-            onClick={() => setIsVisible(false)}
+            onClick={handleClose}
             className="p-2 text-gray-400 hover:text-gray-600 transition-colors"
           >
             <X className="w-5 h-5" />

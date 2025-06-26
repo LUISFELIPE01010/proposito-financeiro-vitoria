@@ -8,7 +8,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-brand-brown via-brand-brown/95 to-brand-brown/90 px-4 md:px-8 relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-brand-brown via-brand-brown/95 to-brand-brown/90 px-4 md:px-8 pb-16 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-32 h-32 bg-brand-gold rounded-full blur-3xl animate-pulse"></div>
@@ -31,7 +31,7 @@ export const Hero = () => {
             O que você precisa é de direção, não de mais dinheiro.
           </h2>
           
-          <p className="text-lg md:text-xl text-white/70 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+          <p className="text-lg md:text-xl text-white/70 mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
             Sua realidade financeira muda quando você aprende a lidar com o que já tem. 
             Se o dinheiro desaparece, as contas acumulam e a ansiedade domina, 
             esse curso é para você.
