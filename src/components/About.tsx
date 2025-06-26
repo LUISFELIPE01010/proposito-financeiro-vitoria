@@ -37,7 +37,7 @@ export const About = () => {
             
             <Button 
               onClick={handleCTAClick}
-              className="bg-gradient-to-r from-brand-brown to-brand-brown/90 hover:from-brand-brown/90 hover:to-brand-brown text-white px-8 py-4 rounded-full transition-all duration-500 transform hover:scale-105 shadow-xl hover:shadow-brand-brown/50"
+              className="bg-brand-brown hover:bg-brand-brown/90 text-white px-8 py-4 rounded-full transition-all duration-300 shadow-xl"
             >
               Conheça o método que já mudou centenas de vidas
               <ArrowRight className="ml-2 w-5 h-5" />

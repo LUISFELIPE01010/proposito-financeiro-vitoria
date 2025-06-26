@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 export const CountdownTimer = () => {
   const [timeLeft, setTimeLeft] = useState(17 * 60); // 17 minutes in seconds
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -15,24 +16,36 @@ export const CountdownTimer = () => {
       });
     }, 1000);
 
-    return () => clearInterval(timer);
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      
+      // Show the timer after scrolling past the hero section
+      setIsVisible(scrollPosition > windowHeight * 0.8);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      clearInterval(timer);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
 
+  if (!isVisible) return null;
+
   return (
-    <div className="bg-red-600/90 backdrop-blur-sm text-white px-6 py-4 rounded-2xl shadow-2xl animate-pulse border border-red-400/50">
-      <div className="text-center">
-        <p className="text-sm font-semibold mb-2 text-yellow-100">
-          🔥 OFERTA ESPECIAL TERMINA EM:
+    <div className="fixed top-0 left-0 right-0 bg-brand-brown/95 backdrop-blur-sm text-white px-6 py-3 shadow-lg z-50 animate-slide-up">
+      <div className="max-w-4xl mx-auto text-center">
+        <p className="text-sm font-semibold mb-1">
+          OFERTA ESPECIAL TERMINA EM:
         </p>
-        <div className="text-3xl font-bold font-mono tracking-wider">
+        <div className="text-2xl font-bold font-mono tracking-wider">
           {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
         </div>
-        <p className="text-xs mt-2 text-yellow-200">
-          Garante sua planilha digital agora!
-        </p>
       </div>
     </div>
   );

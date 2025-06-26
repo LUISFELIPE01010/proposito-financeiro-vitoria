@@ -35,7 +35,7 @@ export const Contact = () => {
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
           <Button 
             onClick={handleWhatsApp}
-            className="bg-gradient-to-r from-brand-brown to-brand-brown/90 hover:from-brand-brown/90 hover:to-brand-brown text-white px-8 py-4 rounded-full flex items-center gap-3 text-lg font-semibold transition-all duration-500 transform hover:scale-105 shadow-xl hover:shadow-brand-brown/50"
+            className="bg-brand-brown hover:bg-brand-brown/90 text-white px-8 py-4 rounded-full flex items-center gap-3 text-lg font-semibold transition-all duration-300 shadow-xl"
           >
             <MessageCircle className="w-6 h-6" />
             WhatsApp
@@ -43,7 +43,7 @@ export const Contact = () => {
           
           <Button 
             onClick={handleInstagram}
-            className="bg-gradient-to-r from-brand-brown to-brand-brown/90 hover:from-brand-brown/90 hover:to-brand-brown text-white px-8 py-4 rounded-full flex items-center gap-3 text-lg font-semibold transition-all duration-500 transform hover:scale-105 shadow-xl hover:shadow-brand-brown/50"
+            className="bg-brand-brown hover:bg-brand-brown/90 text-white px-8 py-4 rounded-full flex items-center gap-3 text-lg font-semibold transition-all duration-300 shadow-xl"
           >
             <Instagram className="w-6 h-6" />
             Instagram
@@ -61,7 +61,7 @@ export const Contact = () => {
           
           <Button 
             onClick={handleFinalCTA}
-            className="bg-gradient-to-r from-brand-gold to-yellow-500 hover:from-yellow-500 hover:to-brand-gold text-brand-brown px-12 py-6 text-xl font-bold rounded-full transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-brand-gold/50 animate-bounce-subtle"
+            className="bg-brand-brown hover:bg-brand-brown/90 text-white px-12 py-6 text-xl font-bold rounded-full transition-all duration-300 shadow-2xl"
           >
             Sim, quero organizar minha vida financeira agora
           </Button>

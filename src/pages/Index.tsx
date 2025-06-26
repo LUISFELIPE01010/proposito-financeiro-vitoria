@@ -1,5 +1,6 @@
 
 import { Hero } from "@/components/Hero";
+import { CountdownTimer } from "@/components/CountdownTimer";
 import { VideoSection } from "@/components/VideoSection";
 import { About } from "@/components/About";
 import { CourseContent } from "@/components/CourseContent";
@@ -12,6 +13,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Hero />
+      <CountdownTimer />
       <VideoSection />
       <About />
       <CourseContent />

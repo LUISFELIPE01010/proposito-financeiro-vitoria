@@ -17,7 +17,7 @@ export const CourseContent = () => {
   };
 
   return (
-    <section className="py-20 bg-brand-black text-white px-4 md:px-8">
+    <section className="py-20 bg-gradient-to-br from-brand-brown via-brand-brown/95 to-brand-brown/90 text-white px-4 md:px-8">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-5xl font-heading font-bold mb-8 animate-fade-in">
           Você não precisa de mais dinheiro. 
@@ -55,7 +55,7 @@ export const CourseContent = () => {
         
         <Button 
           onClick={handleCTAClick}
-          className="bg-brand-gold hover:bg-brand-gold/90 text-white px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+          className="bg-brand-brown hover:bg-brand-brown/90 text-white px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 shadow-lg"
         >
           Quero começar agora
           <ArrowRight className="ml-2 w-5 h-5" />

@@ -1,7 +1,6 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { CountdownTimer } from "@/components/CountdownTimer";
 
 export const Hero = () => {
   const handleCTAClick = () => {
@@ -23,29 +22,24 @@ export const Hero = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-tight">
             Organize sua vida financeira com{" "}
             <span className="text-brand-gold animate-pulse">leveza</span>,{" "}
-            <span className="text-yellow-200">clareza</span> e{" "}
+            <span className="text-white/80">clareza</span> e{" "}
             <span className="text-brand-gold animate-pulse">autonomia</span>
           </h1>
           
-          <h2 className="text-xl md:text-2xl text-yellow-100 mb-6 font-medium">
+          <h2 className="text-xl md:text-2xl text-white/80 mb-6 font-medium">
             Mesmo que você ganhe pouco. Mesmo começando do zero. 
             O que você precisa é de direção, não de mais dinheiro.
           </h2>
           
-          <p className="text-lg md:text-xl text-yellow-50/90 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+          <p className="text-lg md:text-xl text-white/70 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
             Sua realidade financeira muda quando você aprende a lidar com o que já tem. 
             Se o dinheiro desaparece, as contas acumulam e a ansiedade domina, 
             esse curso é para você.
           </p>
-
-          {/* Countdown Timer */}
-          <div className="mb-8">
-            <CountdownTimer />
-          </div>
           
           <Button 
             onClick={handleCTAClick}
-            className="bg-brand-gold hover:bg-brand-gold/90 text-brand-brown px-8 py-6 text-lg font-bold rounded-full transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-brand-gold/50 animate-bounce-subtle"
+            className="bg-brand-brown hover:bg-brand-brown/90 text-white px-8 py-6 text-lg font-bold rounded-full transition-all duration-300 shadow-2xl"
           >
             Quero organizar minhas finanças agora
             <ArrowRight className="ml-2 w-5 h-5" />
@@ -55,7 +49,7 @@ export const Hero = () => {
         {/* Right side - Author photo */}
         <div className="relative animate-slide-up">
           <div className="relative mx-auto w-80 h-80 md:w-96 md:h-96 lg:w-full lg:h-[500px] max-w-md">
-            <div className="absolute inset-0 bg-gradient-to-tr from-brand-gold/30 via-transparent to-yellow-200/20 rounded-3xl rotate-3 animate-pulse"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-brand-gold/30 via-transparent to-white/20 rounded-3xl rotate-3 animate-pulse"></div>
             <img 
               src="/lovable-uploads/787e3892-03db-45f4-9e82-10dc88294e87.png" 
               alt="Vitória Mendes" 
