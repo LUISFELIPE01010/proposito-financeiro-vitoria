@@ -50,7 +50,7 @@ export const Contact = () => {
           </Button>
         </div>
         
-        <div className="bg-gradient-to-r from-white via-gray-50 to-white rounded-3xl p-8 shadow-2xl animate-slide-up border border-brand-gold/20 hover:shadow-3xl transition-shadow duration-500">
+        <div className="bg-gradient-to-r from-white via-gray-50 to-white rounded-3xl p-8 shadow-2xl animate-slide-up border border-brand-gold/20 hover:shadow-3xl transition-shadow duration-500 mb-32">
           <h3 className="text-2xl md:text-3xl font-heading font-bold text-brand-brown mb-4">
             Não deixe para amanhã o que pode mudar sua vida hoje
           </h3>

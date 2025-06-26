@@ -38,7 +38,7 @@ export const CountdownTimer = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed top-0 left-0 right-0 bg-brand-brown/95 backdrop-blur-sm text-white px-6 py-3 shadow-lg z-50 animate-slide-up">
+    <div className="fixed top-0 left-0 right-0 bg-brand-brown/95 backdrop-blur-sm text-white px-6 py-4 shadow-lg z-50 animate-slide-up">
       <div className="max-w-4xl mx-auto text-center">
         <p className="text-sm font-semibold mb-1">
           OFERTA ESPECIAL TERMINA EM:
